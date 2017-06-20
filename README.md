@@ -1,1 +1,2 @@
-# My-JUnit-skills
+# My JUnit skills:
+Tests will check Calculation class
