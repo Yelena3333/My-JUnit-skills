@@ -11,7 +11,7 @@ import org.junit.Test;
 public class TestCalculation {
 
 	private Calculation c;
-	private static int testNumber = 0;
+	private static int testNumber = 1;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -25,7 +25,6 @@ public class TestCalculation {
 
 	@Before
 	public void setUp() throws Exception {
-		testNumber++;
 		System.out.println("Perform pre-condition for test" + testNumber);
 		c = new Calculation();
 	}
@@ -33,6 +32,7 @@ public class TestCalculation {
 	@After
 	public void tearDown() throws Exception {
 		System.out.println("Perform post-condition for test" + testNumber);
+		testNumber++;
 	}
 
 	@Test
