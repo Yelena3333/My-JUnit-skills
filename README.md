@@ -1,2 +1,2 @@
 # My JUnit skills:
-Tests will check Calculation class
+Tests have checked Calculation class
