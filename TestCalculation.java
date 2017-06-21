@@ -10,37 +10,39 @@ import org.junit.Test;
 
 public class TestCalculation {
 
+	private Calculation c;
+	private static int testNumber = 0;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		System.out.println("Set up before class");
+		System.out.println("Start all tests execution...");
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		System.out.println("Tear down after class");
+		System.out.println("End all tests!");
 	}
-
-	private Calculation c;
 
 	@Before
 	public void setUp() throws Exception {
-		System.out.println("Before");
+		testNumber++;
+		System.out.println("Perform pre-condition for test" + testNumber);
 		c = new Calculation();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		System.out.println("After");
+		System.out.println("Perform post-condition for test" + testNumber);
 	}
 
 	@Test
 	public void testAdd() {
-		assertEquals(7, c.add(5, 2));
+		assertEquals("Add simple digits: ", 7, c.add(5, 2));
 	}
 
 	@Test
 	public void testDiv() {
-		assertEquals(2, c.div(10, 5));
+		assertEquals("Divide simple digits: ", 2, c.div(10, 5));
 	}
 
 	@Test(expected = ArithmeticException.class)
